@@ -1,9 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectCapital } from "../actions";
+import { selectCapital, fetchLocations } from "../actions";
 
 
 class CapitalList extends React.Component {
+  componentDidMount() {
+    this.props.fetchLocations("sunnyvale,ca");
+  }
+
   renderCapitals() {
     return this.props.capitals.map(capital => {
       return (
@@ -34,4 +38,9 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { selectCapital })(CapitalList);
+const mapDispatchToProps = {
+  selectCapital,
+  fetchLocations
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CapitalList);
