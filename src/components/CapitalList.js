@@ -1,22 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
+import { selectCapital } from "../actions";
+
 
 class CapitalList extends React.Component {
   renderCapitals() {
     return this.props.capitals.map(capital => {
       return (
         <div key={capital.name}>
-          <div>
-            {capital.name}: {capital.temp}
-          </div>
+          <button
+            onClick={() => this.props.selectCapital(capital)}
+            className="ui button"
+          >
+            {capital.name}
+          </button>
         </div>
       );
     });
   }
 
   render() {
-    console.log(this.props);
-    return <div>{this.renderCapitals()}</div>;
+    return (
+      <div>
+        <div className="ui vertical basic buttons">{this.renderCapitals()}</div>
+      </div>
+    );
   }
 }
 
@@ -26,4 +34,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CapitalList);
+export default connect(mapStateToProps, { selectCapital })(CapitalList);
