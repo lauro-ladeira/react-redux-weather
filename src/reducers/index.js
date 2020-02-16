@@ -2,10 +2,10 @@ import { combineReducers } from "redux";
 
 const capitalsReducer = () => {
   return [
-    { name: "London", temp: "8°C" },
-    { name: "New York", temp: "10°C" },
-    { name: "Sydney", temp: "23°C" },
-    { name: "Rome", temp: "17°C" }
+    { name: "London", temp: null },
+    { name: "Albuquerque", temp: null },
+    { name: "Sydney", temp: null },
+    { name: "São Paulo", temp: null }
   ];
 };
 
