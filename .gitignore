@@ -24,4 +24,4 @@ yarn-error.log*
 
 .env
 
-/src/yahooWeath
+/src/yahooWeather
