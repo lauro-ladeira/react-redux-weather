@@ -1,25 +1,42 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
 class CityDetail extends React.Component {
-  render() {
+  renderWeather(city) {
+    return (
+      <tr key={city.name}>
+        <td>{city.name}</td>
+        <td>{city.temp}</td>
+        <td>{city.pressure}</td>
+        <td>{city.humidity}</td>
+      </tr>
+    );
+  }
 
-    if(!this.props.cityInfo){
-      return null
+  render() {
+    if (!this.props.cities) {
+      return null;
     }
     return (
-    <div>
-      {this.props.cityInfo.name}: <strong>{this.props.cityInfo.temp}</strong>
-    </div>
+      <table className="table table-hover">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Temperature</th>
+            <th>Pressure</th>
+            <th>Humidity</th>
+          </tr>
+        </thead>
+        <tbody>{this.props.cities.map(this.renderWeather)}</tbody>
+      </table>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    cityInfo: state.searchedCity
-  }
-}
-
+    cities: state.searchedCities
+  };
+};
 
 export default connect(mapStateToProps)(CityDetail);

@@ -12,7 +12,12 @@ class SearchBar extends React.Component {
   onFormSubmit = e => {
     e.preventDefault();
     this.props.fetchLocations(this.state.term);
+    this.resetInput();
   };
+
+  resetInput = () => {
+    this.setState({ term: "" });
+  }
 
   render() {
     return (

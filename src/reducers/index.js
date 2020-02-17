@@ -1,14 +1,14 @@
 import { combineReducers } from "redux";
 
-const searchedCityReducer = (searchedCity = null, action) => {
+const searchedCityReducer = (searchedCities = [], action) => {
   if (action.type === "CITY_SEARCHED") {
-    return action.payload;
+    return [action.payload, ...searchedCities];
   }
-  return searchedCity;
+  return searchedCities;
 };
 
 export default combineReducers({
-  searchedCity: searchedCityReducer
+  searchedCities: searchedCityReducer
 });
 
 /*

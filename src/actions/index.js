@@ -1,7 +1,6 @@
 import axios from "axios";
 import { generateAuth } from "../apis/yahooWeather";
 
-
 export const fetchLocations = location => dispatch => {
   const query = {
     location,
@@ -27,7 +26,9 @@ export const fetchLocations = location => dispatch => {
         type: "CITY_SEARCHED",
         payload: {
           name: resp.data.location.city,
-          temp: `${resp.data.current_observation.condition.temperature}°C`
+          temp: `${resp.data.current_observation.condition.temperature}°C`,
+          humidity: `${resp.data.current_observation.atmosphere.humidity}%`,
+          pressure: resp.data.current_observation.atmosphere.pressure
         }
       });
     });
