@@ -1,22 +1,22 @@
 import { combineReducers } from "redux";
 
-const capitalsReducer = () => {
-  return [
-    { name: "London", temp: null },
-    { name: "Albuquerque", temp: null },
-    { name: "Sydney", temp: null },
-    { name: "São Paulo", temp: null }
-  ];
-};
-
-const selectedCapitalReducer = (selectedCapital = null, action) => {
-  if (action.type === "CAPITAL_SELECTED") {
+const searchedCityReducer = (searchedCity = null, action) => {
+  if (action.type === "CITY_SEARCHED") {
     return action.payload;
   }
-  return selectedCapital;
+  return searchedCity;
 };
 
 export default combineReducers({
-  capitals: capitalsReducer,
-  selectedCapital: selectedCapitalReducer
+  searchedCity: searchedCityReducer
 });
+
+/*
+  state:
+  {
+    searchedCity: {
+      name: 'London',
+      temp: '25º'
+    }
+  }
+*/

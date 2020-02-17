@@ -1,12 +1,6 @@
 import axios from "axios";
 import { generateAuth } from "../apis/yahooWeather";
 
-export const selectCapital = capital => {
-  return {
-    type: "CAPITAL_SELECTED",
-    payload: capital
-  };
-};
 
 export const fetchLocations = location => dispatch => {
   const query = {
@@ -30,7 +24,7 @@ export const fetchLocations = location => dispatch => {
     })
     .then(resp => {
       dispatch({
-        type: "CAPITAL_SELECTED",
+        type: "CITY_SEARCHED",
         payload: {
           name: resp.data.location.city,
           temp: `${resp.data.current_observation.condition.temperature}°C`
