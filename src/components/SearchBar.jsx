@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
             value={this.state.term}
             onChange={this.onInputChange}
           />
-          <div className="ui button">Search</div>
+          <div onClick={this.onFormSubmit}className="ui button">Search</div>
         </div>
       </form>
     );

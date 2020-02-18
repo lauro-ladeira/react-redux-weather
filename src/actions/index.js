@@ -27,8 +27,13 @@ export const fetchLocations = location => dispatch => {
         payload: {
           name: resp.data.location.city,
           temp: `${resp.data.current_observation.condition.temperature}°C`,
+          min: `${resp.data.forecasts[0].low}°`,
+          max: `${resp.data.forecasts[0].high}°`,
+          condition: resp.data.current_observation.condition.text,
           humidity: `${resp.data.current_observation.atmosphere.humidity}%`,
-          pressure: `${resp.data.current_observation.atmosphere.pressure}hpa`
+          pressure: `${resp.data.current_observation.atmosphere.pressure}hpa`,
+          region: resp.data.location.region.length > 3 ? null: `,${resp.data.location.region}`,
+          country: resp.data.location.country
         }
       });
     });

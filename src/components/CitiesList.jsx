@@ -1,19 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 
-class CityDetail extends React.Component {
-  state = { textClass: null };
-
-  handleActive= () => {
-    this.setState({ textClass: "active" });
-  };
+class CitiesList extends React.Component {
 
   renderWeather = (city) => {
     return (
       <tr
         key={city.name}
-        className={this.state.textClass}
-        onClick={this.handleActive}
       >
         <td>{city.name}</td>
         <td>{city.temp}</td>
@@ -28,7 +21,7 @@ class CityDetail extends React.Component {
       return null;
     }
     return (
-      <table className="ui selectable table">
+      <table className="ui selectable unstackable table">
         <thead>
           <tr>
             <th>City</th>
@@ -44,9 +37,10 @@ class CityDetail extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
     cities: state.searchedCities
   };
 };
 
-export default connect(mapStateToProps)(CityDetail);
+export default connect(mapStateToProps)(CitiesList);
