@@ -5,7 +5,7 @@ import CityDetail from "./CityDetail";
 
 const App = () => {
   return (
-    <div className="container" style={{marginTop: '20px'}}>
+    <div className="ui container" style={{marginTop: '20px'}}>
       <SearchBar />
       <CityDetail /> 
     </div>

@@ -17,23 +17,21 @@ class SearchBar extends React.Component {
 
   resetInput = () => {
     this.setState({ term: "" });
-  }
+  };
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input
-          autoFocus
-          className="form-control"
-          placeholder="Search"
-          value={this.state.term}
-          onChange={this.onInputChange}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn secondary">
-            Search
-          </button>
-        </span>
+      <form onSubmit={this.onFormSubmit}>
+        <div className="ui left icon fluid action input">
+        <i className="search icon"></i>
+          <input
+            autoFocus
+            type="text"
+            value={this.state.term}
+            onChange={this.onInputChange}
+          />
+          <div className="ui button">Search</div>
+        </div>
       </form>
     );
   }

@@ -28,7 +28,7 @@ export const fetchLocations = location => dispatch => {
           name: resp.data.location.city,
           temp: `${resp.data.current_observation.condition.temperature}°C`,
           humidity: `${resp.data.current_observation.atmosphere.humidity}%`,
-          pressure: resp.data.current_observation.atmosphere.pressure
+          pressure: `${resp.data.current_observation.atmosphere.pressure}hpa`
         }
       });
     });
