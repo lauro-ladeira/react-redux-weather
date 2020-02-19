@@ -1,11 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
+import { getTemperatureClass } from "../actions";
 
 class WeatherDetail extends React.Component {
+  setTemperatureClass = () => {
+    const tempC = this.props.city.temp;
+    let textClass = " "
+
+    if (tempC >= 25) {
+      textClass = "hot"
+    }
+    if (tempC < 25 && tempC >= 10) {
+      textClass = "warm"
+    }
+    if(tempC < 10) {
+      textClass ="freezing"
+    }
+    this.props.getTemperatureClass(textClass)
+  }
+
   renderForecasts() {
     const forecasts = this.props.city.forecasts;
     return forecasts.map((forecast, index) => {
-      while (index < 5) {
+      while (index > 0 && index < 6) {
         return (
           <div key={Math.random()} className="column">
             <div className="content">
@@ -30,6 +47,7 @@ class WeatherDetail extends React.Component {
     }
     return (
       <div className="ui centered card">
+        {this.setTemperatureClass()}
         <div className="content">
           <div className="header">
             {city.name} {city.region} - {city.country}
@@ -56,7 +74,7 @@ class WeatherDetail extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    city: state.searchedCities[0]
+    city: state.searchedCities[0],
   };
 };
-export default connect(mapStateToProps)(WeatherDetail);
+export default connect(mapStateToProps, { getTemperatureClass })(WeatherDetail);

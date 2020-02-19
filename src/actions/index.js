@@ -1,6 +1,14 @@
 import axios from "axios";
 import { generateAuth } from "../apis/yahooWeather";
 
+export const getTemperatureClass = tempClass => {
+  return {
+    type: 'GET_CLASS',
+    payload: tempClass
+  }
+}
+
+
 export const fetchLocations = location => dispatch => {
   const query = {
     location,

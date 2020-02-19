@@ -7,8 +7,17 @@ const searchedCityReducer = (searchedCities = [], action) => {
   return searchedCities;
 };
 
+const temperatureClassReducer = (temperatureClass = null, action) => {
+  if(action.type === "GET_CLASS") {
+    return action.payload
+  }
+  return temperatureClass;
+}
+
+
 export default combineReducers({
-  searchedCities: searchedCityReducer
+  searchedCities: searchedCityReducer,
+  temperatureClass: temperatureClassReducer
 });
 
 /*
@@ -19,4 +28,7 @@ export default combineReducers({
       temp: '25º'
     }
   }
+
+  temperatureClass: freezing
+
 */
