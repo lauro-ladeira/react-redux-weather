@@ -2,6 +2,27 @@ import React from "react";
 import { connect } from "react-redux";
 
 class WeatherDetail extends React.Component {
+  renderForecasts() {
+    const forecasts = this.props.city.forecasts;
+    return forecasts.map((forecast, index) => {
+      while (index < 5) {
+        return (
+          <div key={Math.random()} className="column">
+            <div className="content">
+              <div>
+                <strong>{forecast.day}</strong>
+              </div>
+              <div>
+                {forecast.low}° {forecast.high}°
+              </div>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    });
+  }
+
   render() {
     const city = this.props.city;
     if (!city) {
@@ -14,7 +35,7 @@ class WeatherDetail extends React.Component {
             {city.name} {city.region} - {city.country}
           </div>
           <h2>
-            {city.temp}&nbsp;&nbsp;&nbsp;{city.condition}
+            {city.temp}°C&nbsp;&nbsp;&nbsp;{city.condition}
           </h2>
           <span>
             <i className="arrow down icon"></i>
@@ -26,13 +47,7 @@ class WeatherDetail extends React.Component {
           </span>
         </div>
         <div className="ui grid extra content">
-          <div className="five column row">
-            <div className="column">Tue 25°</div>
-            <div className="column">Wed 25°</div>
-            <div className="column">Thu 25°</div>
-            <div className="column">Fri 25°</div>
-            <div className="column">Sat 25°</div>
-          </div>
+          <div className="five column row">{this.renderForecasts()}</div>
         </div>
       </div>
     );

@@ -26,14 +26,15 @@ export const fetchLocations = location => dispatch => {
         type: "CITY_SEARCHED",
         payload: {
           name: resp.data.location.city,
-          temp: `${resp.data.current_observation.condition.temperature}°C`,
+          temp: resp.data.current_observation.condition.temperature,
           min: `${resp.data.forecasts[0].low}°`,
           max: `${resp.data.forecasts[0].high}°`,
           condition: resp.data.current_observation.condition.text,
-          humidity: `${resp.data.current_observation.atmosphere.humidity}%`,
-          pressure: `${resp.data.current_observation.atmosphere.pressure}hpa`,
+          humidity: resp.data.current_observation.atmosphere.humidity,
+          pressure: resp.data.current_observation.atmosphere.pressure,
           region: resp.data.location.region.length > 3 ? null: `,${resp.data.location.region}`,
-          country: resp.data.location.country
+          country: resp.data.location.country,
+          forecasts: resp.data.forecasts
         }
       });
     });

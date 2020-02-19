@@ -2,19 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 
 class CitiesList extends React.Component {
-
-  renderWeather = (city) => {
+  renderWeather = city => {
     return (
-      <tr
-        key={city.name}
-      >
+      <tr key={city.name}>
         <td>{city.name}</td>
         <td>{city.temp}</td>
         <td>{city.pressure}</td>
         <td>{city.humidity}</td>
       </tr>
     );
-  }
+  };
 
   render() {
     if (!this.props.cities) {
@@ -25,9 +22,9 @@ class CitiesList extends React.Component {
         <thead>
           <tr>
             <th>City</th>
-            <th>Temperature</th>
-            <th>Pressure</th>
-            <th>Humidity</th>
+            <th>Temperature (°C)</th>
+            <th>Pressure (mb)</th>
+            <th>Humidity (%)</th>
           </tr>
         </thead>
         <tbody>{this.props.cities.map(this.renderWeather)}</tbody>
