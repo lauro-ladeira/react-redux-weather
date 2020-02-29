@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <div className={`ulala ${this.props.temperatureClass}`}>
         <div className="ui container">
-          <div className="ui grid">
+          <div className={"ui grid"}>
             <div className="ten wide centered column">
               <WeatherDetail />
               <SearchBar />

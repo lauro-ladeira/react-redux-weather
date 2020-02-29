@@ -1,9 +1,8 @@
 import CryptoJS from "crypto-js";
 
 export const generateAuth = (query, yahoo_forecast_url) => {
-  const consumer_key =
-    "dj0yJmk9TWNYcEpRYWYwaVlNJmQ9WVdrOU5VOW1ZVFpxTkhNbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWE4";
-  const consumer_secret = "1d0ad91a5e4cf552f65ef3c88c4fb231bf35860f";
+  const consumer_key = process.env.REACT_APP_CONSUMER_KEY;
+  const consumer_secret =  process.env.REACT_APP_CONSUMER_SECRET;
   const concat = "&";
   const merged = {};
   const oauth = {

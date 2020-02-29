@@ -17,7 +17,7 @@ export const fetchLocations = location => dispatch => {
   };
   const yahoo_forecast_url =
     "https://weather-ydn-yql.media.yahoo.com/forecastrss";
-  const app_id = "5Ofa6j4s";
+  const app_id = process.env.REACT_APP_ID;
 
   const auth_header = generateAuth(query, yahoo_forecast_url);
 
@@ -47,3 +47,4 @@ export const fetchLocations = location => dispatch => {
       });
     });
 };
+

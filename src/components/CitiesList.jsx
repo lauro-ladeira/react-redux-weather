@@ -18,7 +18,9 @@ class CitiesList extends React.Component {
       return null;
     }
     return (
-      <table className="ui selectable unstackable table">
+      <table
+        className={`ui selectable unstackable table ${this.props.temperatureClass}`}
+      >
         <thead>
           <tr>
             <th>City</th>
@@ -36,7 +38,8 @@ class CitiesList extends React.Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    cities: state.searchedCities
+    cities: state.searchedCities,
+    temperatureClass: state.temperatureClass
   };
 };
 

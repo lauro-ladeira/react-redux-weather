@@ -1,17 +1,57 @@
+
+body {
+  background-color:#2d3436;
+
+
+}
+
+.grid.freezing {
+  background-color: cyan;
+}
+
 .ulala {
-	display: flex;
-	background-color: #2d3436;
-	height: 100vh;
+  display: flex;
+  height: 100%;
+  padding-bottom: 17em;
+
+  &.warm {
+    background-color: #6ace4b;
+  }
+  &.freezing {
+    background-color: cyan;
+  }
+  &.hot {
+    background-color: tomato;
+  }
 }
 
-.ulala.freezing {
-	background-color: cyan;
+
+
+
+.container {
+  margin-top: 20px;
 }
 
-.ulala.hot {
-	background-color: tomato;
+.card {
+  &.freezing {
+    background: #458ac2;
+  }
+  &.hot {
+    background-color: #e06818;
+  }
+  &.warm {
+    background-color: #72e018;
+  }
 }
 
-.ui.container {
-	margin-top: 20px;
+.table {
+  &.freezing {
+    background: #458ac2;
+  }
+  &.hot {
+    background-color: #e06818;
+  }
+  &.warm {
+    background-color: #72e018;
+  }
 }

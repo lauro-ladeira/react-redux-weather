@@ -46,7 +46,7 @@ class WeatherDetail extends React.Component {
       return null;
     }
     return (
-      <div className="ui centered card">
+      <div className={`ui centered card ${this.props.temperatureClass}`}>
         {this.setTemperatureClass()}
         <div className="content">
           <div className="header">
@@ -75,6 +75,7 @@ class WeatherDetail extends React.Component {
 const mapStateToProps = state => {
   return {
     city: state.searchedCities[0],
+    temperatureClass: state.temperatureClass
   };
 };
 export default connect(mapStateToProps, { getTemperatureClass })(WeatherDetail);
