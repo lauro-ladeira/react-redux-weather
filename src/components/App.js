@@ -8,9 +8,9 @@ import { connect } from "react-redux";
 class App extends React.Component {
   render() {
     return (
-      <div className={`ulala ${this.props.temperatureClass}`}>
+      <div id="div-root" className={`theme ${this.props.temperatureClass}`}>
         <div className="ui container">
-          <div className={"ui grid"}>
+          <div className="ui grid">
             <div className="ten wide centered column">
               <WeatherDetail />
               <SearchBar />
@@ -23,10 +23,10 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     temperatureClass: state.temperatureClass
-  }
+  };
 };
 
 export default connect(mapStateToProps)(App);

@@ -19,8 +19,7 @@ class CitiesList extends React.Component {
     }
     return (
       <table
-        className={`ui selectable unstackable table ${this.props.temperatureClass}`}
-      >
+        className={`ui table ${this.props.temperatureClass}`}>
         <thead>
           <tr>
             <th>City</th>

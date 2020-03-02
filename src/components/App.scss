@@ -1,31 +1,28 @@
-
-body {
+#root {
   background-color:#2d3436;
-
-
+  height: 100vh;
 }
 
-.grid.freezing {
-  background-color: cyan;
-}
+#div-root {
+  padding-top: 1rem;
+  min-height: 100%;
+  height:auto !important; /* cross-browser */
+  height: 100%; /* cross-browser */
+ 
+} 
 
-.ulala {
-  display: flex;
-  height: 100%;
-  padding-bottom: 17em;
+.theme {
 
   &.warm {
-    background-color: #6ace4b;
+    background-color: #FBFF87;
   }
   &.freezing {
-    background-color: cyan;
+    background-color: #67c6bb;
   }
   &.hot {
-    background-color: tomato;
+    background-color:#F0CC87;
   }
 }
-
-
 
 
 .container {
@@ -33,25 +30,41 @@ body {
 }
 
 .card {
+  color: #2d3436;
   &.freezing {
-    background: #458ac2;
+    background: #22a39c;
+    
   }
   &.hot {
-    background-color: #e06818;
+    background-color: #F09D36;
   }
   &.warm {
-    background-color: #72e018;
+    background-color:  #FFF249;
   }
 }
 
-.table {
+.ui.table {
   &.freezing {
-    background: #458ac2;
+    background-color:#22a39c;
+    thead th{
+      background-color: #2e8e89;
+    }
   }
   &.hot {
-    background-color: #e06818;
+    background-color: #F09D36;
+    thead th{
+      background-color: #F38529;
+    }
   }
   &.warm {
-    background-color: #72e018;
+    background-color: #FFF249;
+    thead th{
+      background-color: #E8D051;
   }
+  }
+}
+
+
+.ui.grid.extra.content {
+  color: inherit;
 }

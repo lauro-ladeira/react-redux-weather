@@ -7,14 +7,20 @@ class WeatherDetail extends React.Component {
     const tempC = this.props.city.temp;
     let textClass = " "
 
-    if (tempC >= 25) {
+    if (tempC >= 30) {
       textClass = "hot"
     }
-    if (tempC < 25 && tempC >= 10) {
+    if (tempC < 30 && tempC >= 25) {
+      textClass = "hot"
+    }
+    if (tempC < 25 && tempC >= 18) {
       textClass = "warm"
     }
-    if(tempC < 10) {
-      textClass ="freezing"
+    if (tempC < 18 && tempC >= 10) {
+      textClass = "warm"
+    }
+    if (tempC < 10) {
+      textClass = "freezing"
     }
     this.props.getTemperatureClass(textClass)
   }
