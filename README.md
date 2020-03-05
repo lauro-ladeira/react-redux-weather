@@ -14,7 +14,7 @@ A aplicação foi feita usando React, Redux, Axios, Semantic-ui e Sass. O que el
 Verifique se o [Node.js](http://nodejs.org/) está instalado.
 
 ```sh
-git clone git@github.com:lauro-ladeira/react-redux-weather # or clone your own fork
+git clone git@github.com:lauro-ladeira/react-redux-weather 
 cd react-redux-weather
 npm install
 npm start
