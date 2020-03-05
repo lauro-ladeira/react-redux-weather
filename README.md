@@ -1,5 +1,9 @@
 # React.js Weather App
 
+![Imgur](https://i.imgur.com/qbh4aEz.jpg)
+
+> [Outras screenshots do Weather App - Amostras da paleta de cores](https://imgur.com/a/Zi4ahEc)
+
 Projeto pessoal criado para se obter experiência de aprendizado nas tecnologias React e Redux, compartilhando o resultado à medida que este se desenvolve.
 
 A aplicação foi feita usando React, Redux, Axios, Semantic-ui e Sass. O que ela faz é basicamente buscar informações de previsão do tempo consumindo a API Yahoo Weather, exibindo essas informações na tela. A biblioteca Semantic-ui foi usada para ajudar com o design responsivo e a estilização. Também foi criado um estilo que usa uma paleta de cores de acordo com a temperatura da cidade procurada usando o pré-processador Sass.
