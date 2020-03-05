@@ -49,7 +49,7 @@ class WeatherDetail extends React.Component {
   render() {
     const city = this.props.city;
     if (!city) {
-      return null;
+      return <h1>How is the weather in your favorite city?</h1>;
     }
     return (
       <div className={`ui centered card ${this.props.temperatureClass}`}>

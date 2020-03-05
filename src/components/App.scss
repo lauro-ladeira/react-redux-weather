@@ -11,6 +11,15 @@
  
 } 
 
+.ui.card {
+  box-shadow: unset;
+}
+
+h1 {
+  color: #FFF;
+  text-align: center;
+}
+
 .theme {
 
   &.warm {
@@ -67,4 +76,11 @@
 
 .ui.grid.extra.content {
   color: inherit;
+}
+
+@media only screen and (max-width: 767px){
+
+  .ui.grid>.centered.column, .ui.grid>.row>.centered.column{
+    width: auto!important;
+  }
 }
